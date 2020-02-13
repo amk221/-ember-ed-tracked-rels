@@ -1,4 +1,8 @@
-List: {{this.list.name}}
+list: {{this.list.name}}
+
+<br><br>
+
+list.items:
 
 <br><br>
 
@@ -7,6 +11,10 @@ List: {{this.list.name}}
 {{/each}}
 
 <hr>
+
+Subset of list.items
+
+<br><br>
 
 {{#each this.subset as |item|}}
   {{item.name}}<br>
