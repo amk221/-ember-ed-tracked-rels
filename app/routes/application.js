@@ -6,9 +6,9 @@ export default class ApplicationRoute extends Route {
   @inject store;
 
   model() {
-    // return { name: 'List 1', items: ember() };
+    // return { name: 'Ember Array List', items: ember() };
 
-    return this.store.createRecord('list', { name: 'List 1' });
+    return this.store.createRecord('list', { name: 'Record Array List' });
   }
 
   setupController(controller, model) {
