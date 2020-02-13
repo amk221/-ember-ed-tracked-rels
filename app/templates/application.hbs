@@ -1,5 +1,17 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+List: {{this.list.name}}
 
-{{outlet}}
+<br><br>
+
+{{#each this.list.items as |item|}}
+  {{item.name}}<br>
+{{/each}}
+
+<hr>
+
+{{#each this.subset as |item|}}
+  {{item.name}}<br>
+{{/each}}
+
+<br><br>
+
+<button {{on "click" this.addItem}}>Add item</button>
