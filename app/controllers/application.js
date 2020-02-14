@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { A as emberA } from '@ember/array';
 import { inject } from '@ember/service';
 
 export default class ApplicationController extends Controller {
@@ -7,10 +8,15 @@ export default class ApplicationController extends Controller {
 
   count = 1;
 
+  init() {
+    super.init(...arguments);
+
+    // this.list = { name: 'Ember Array List', items: emberA() };
+    this.list = this.store.createRecord('list', { name: 'Record Array List' });
+  }
+
   get subset() {
-    return this.list.items.filter(item => {
-      return item.name === 'Item 1';
-    });
+    return this.list.items.filter(item => item.name === 'Item 1');
   }
 
   @action
